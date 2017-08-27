@@ -18,7 +18,7 @@ Andocides *On the Mysteries* 1.96
 
 IG 1.3, 156
 
-![Decree honoring Leonides of Halicarnassus](decree-masked.png)
+![Decree honoring Leonides of Halicarnassus](imgs/decree-masked.png)
 
 ---
 
