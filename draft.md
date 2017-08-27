@@ -11,25 +11,25 @@ header-includes:
 ---
 
 
----
 
+# Digital scholarship and Classics
 
-# Digital textual analysis and Classics
-
-
----
 
 -   25 years ago: a leading discipline
--   today: largely absent?
+-   today: largely absent from most innovative areas of textual analysis?
 
-Latent pattern recognition:
+
+---
+
+
+# Latent pattern recognition
 
 -    topic modelling
 -    embedded laten patte
 
 ---
 
-Good and bad reasons
+# Good and bad reasons
 
 -   corpus size
 -   tolerance for imprecise editions
@@ -49,6 +49,7 @@ Good and bad reasons
     -   confusion of multivalent and contradictory glyphs
 
 ---
+
 
 
 ![A Vienna secession?](imgs/secession.png)
@@ -85,7 +86,7 @@ crossing of lexical and inflectional properties of Greek accent cannot be reduce
 
 ---
 
-A simple worked example
+# A simple worked example
 
 ---
 
@@ -103,6 +104,28 @@ IG 1.3, 156
 
 ---
 
+# Vocabulary ("stems")
+
+![Nouns, in Attic](imgs/attic-noun-stems.png)
+
+![Nouns, in literary Greek](imgs/lit-noun-stems.png)
+
+---
+
+# Inflectional rules
+
+![Nouns, in Attic](imgs/attic-noun-infl.png)
+
+![Nouns, in literary Greek](imgs/lit-noun-infl.png)
+
+---
+
+# Analysis
+
+
+
+
+---
 
 
 # References
