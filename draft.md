@@ -16,26 +16,36 @@ header-includes:
 
 
 -   25 years ago: a leading discipline
--   today: largely absent from most innovative areas of textual analysis?
+-   today: largely absent from new areas of textual analysis?
 
 
 ---
 
 
-# Latent pattern recognition
+# Example: latent pattern recognition
 
 -    topic modelling
--    embedded laten patte
+-    semantic relations with embedded word vectors
 
 ---
 
-# Good and bad reasons
+# Some reasons, good and bad
 
--   corpus size
--   tolerance for imprecise editions
--   morphological complexity
+-   corpus size vs. tolerance for imprecise editions
+-   **morphological complexity**
 
 
+---
+
+# Motivation
+
+Homer Multitext project: manuscripts with
+
+-   multiple dialects
+-   unattested vocabulary
+-   distinct orthographies
+
+![The Venetus A manuscript](imgs/VA012RN-0013.jpg)
 
 ---
 
@@ -51,34 +61,31 @@ header-includes:
 ---
 
 
+# In 2017, it is (still!) not possible to encode Greek
+
+
+---
+
+
 
 ![A Vienna secession?](imgs/secession.png)
 
 
 ---
 
-# Motivation and background
-
-HMT:
-
--   dialects
--   vocabulary
-
----
 
 
+# A corpus-linguistic perspective
 
-historical language: corpus-linguistic perspective
+Every corpus is characterized by:
 
-for a given corpus:
-
--    unique lexicon
--    unique set of inflectional rules
+-    a unique lexicon
+-    a unique set of inflectional rules
 
 
 ---
 
-# "Greek" defined by *shared categories*
+# "Greek" is defined by *analytical categories*
 
 
 - "noun" (GCN)
@@ -86,7 +93,7 @@ for a given corpus:
 - "conjugated verb" (PNTMV)
 - "infinitive" (TV)
 - "participle" (GCTMV)
-- "verval adjective" (GCN)
+- "verbal adjective" (GCN)
 - "adverb" (Degree)
 - "indeclinable" (part of speech)
 
@@ -173,8 +180,20 @@ Output of Attic analysis fed as input to literary generator:
 
 ---
 
+# Possibilities
 
-# References
+
+
+
+---
+
+# Current state
+
+---
+
+# Thank you!
+
+For more information:
 
 -   "Morphological Analysis of Historical Languages," *BICS* 59-2 (2016) 89-102.
--   https://github.com/neelsmith/kanones.git
+-   <https://github.com/neelsmith/kanones.git>
