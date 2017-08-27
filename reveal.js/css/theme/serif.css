@@ -55,7 +55,10 @@ body {
   word-wrap: break-word; }
 
 .reveal h1 {
-  font-size: 3.77em; }
+  /*font-size: 3.77em;*/
+  /* Make h1 and h2 same size with different behavior (down vs next arrow) in reveal.js?*/
+  font-size: 2.44em;
+}
 
 .reveal h2 {
   font-size: 2.11em; }
