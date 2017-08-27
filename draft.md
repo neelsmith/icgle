@@ -57,6 +57,17 @@ header-includes:
 
 ---
 
+# Motivation and background
+
+HMT:
+
+-   dialects
+-   vocabulary
+
+---
+
+
+
 historical language: corpus-linguistic perspective
 
 for a given corpus:
@@ -67,9 +78,17 @@ for a given corpus:
 
 ---
 
-what makes Greek?
+# "Greek" defined by *shared categories*
 
-shared analytical forms
+
+- "noun" (GCN)
+- "adjective" (GCND)
+- "conjugated verb" (PNTMV)
+- "infinitive" (TV)
+- "participle" (GCTMV)
+- "verval adjective" (GCN)
+- "adverb" (Degree)
+- "indeclinable" (part of speech)
 
 
 ---
@@ -122,7 +141,34 @@ IG 1.3, 156
 
 # Analysis
 
+![literary Greek](imgs/analysis-lit.png)
 
+---
+
+
+# Analysis
+
+![Attic Greek](imgs/analysis-attic.png)
+
+
+
+
+---
+
+
+# Generated
+
+
+![literary Greek](imgs/generator.png)
+
+---
+
+# Pipeline
+
+Output of Attic analysis fed as input to literary generator:
+
+
+![From Attic to literary Greek](imgs/pipeline.png)
 
 
 ---
