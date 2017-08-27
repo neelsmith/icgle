@@ -89,11 +89,11 @@ Encode Greek in a *specified orthography*, including :
 Literary Greek:
 
 
-`ἔδοξε == e)/doce`
+>ἔδοξε == e)/doce
 
 Pure diplomatic rendering of classical Attic:
 
-`εδοχσεν == EDOXSEN`
+>εδοχσεν == EDOXSEN
 
 
 
