@@ -1,6 +1,6 @@
-# iecgl
+# icgle
 
-Talk at IECGL.
+Talk at ICGLE.
 
 In markdown format:
 
