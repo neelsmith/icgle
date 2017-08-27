@@ -1,7 +1,7 @@
 ---
 author: Neel Smith
 title: Parsing Greek morphology
-date: August 29, 2017
+date: ICGLE, August 29, 2017
 header-includes:
     - \setsansfont{Gentium}
 ---
