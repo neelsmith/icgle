@@ -1,8 +1,8 @@
 # icgle
 
-Talk at ICGLE.
+Talk at ICGLE on "Parsing Greek morphology."
 
-In markdown format:
+Source in markdown format:
 
 -   assumes availability of Gentium font
 -   builds with pandoc gisted for:
