@@ -300,7 +300,7 @@ Output of Attic analysis fed as input to literary generator:
 -   morphologically sensitive structured searching
 -   lexically unified corpus for latent pattern analysis
 -   integration of corpora in distinct writing systems or dialects
-
+-   pedagogy with epigraphic material in distinct writing systems or dialects?
 
 
 ---
