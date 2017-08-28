@@ -95,7 +95,9 @@ Pure diplomatic rendering of classical Attic:
 
 >εδοχσεν == EDOXSEN
 
+Editorially normalized version of classical Attic:
 
+>ἔδοχσεν τêι βολêι == E(/DOXSEN TE=I BOLE=I
 
 ---
 
