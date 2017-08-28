@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Neel Smith">
+  <title>Parsing Greek morphology</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="reveal.js/css/reveal.css">
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" href="reveal.js/css/theme/serif.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+  
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section>
+  <h1 class="title">Parsing Greek morphology</h1>
+  <h2 class="author">Neel Smith</h2>
+  <h3 class="date">ICGLE, August 29, 2017</h3>
+</section>
+
+<section id="in-multiple-dialects-and-alphabets" class="slide level1">
+<h1>... in multiple dialects and alphabets</h1>
+</section>
+<section id="digital-scholarship-and-classics" class="slide level1">
+<h1>Digital scholarship and Classics</h1>
+<ul>
+<li>25 years ago: a leading discipline</li>
+<li>today: largely absent from new areas of textual analysis?</li>
+</ul>
+</section>
+<section id="example-latent-pattern-recognition" class="slide level1">
+<h1>Example: latent pattern recognition</h1>
+<ul>
+<li>topic modelling</li>
+<li>semantic relations with embedded word vectors</li>
+</ul>
+</section>
+<section id="some-reasons-good-and-bad" class="slide level1">
+<h1>Some reasons, good and bad</h1>
+<ul>
+<li>corpus size vs. tolerance for imprecise editions</li>
+<li><strong>morphological complexity</strong></li>
+</ul>
+</section>
+<section id="motivation" class="slide level1">
+<h1>Motivation</h1>
+<p>Homer Multitext project: manuscripts with</p>
+<ul>
+<li>multiple dialects</li>
+<li>unattested vocabulary</li>
+<li>distinct orthographies</li>
+</ul>
+<figure>
+<img src="imgs/VA012RN-0013.jpg" alt="The Venetus A manuscript" /><figcaption>The Venetus A manuscript</figcaption>
+</figure>
+</section>
+<section id="current-standards" class="slide level1">
+<h1>Current standards</h1>
+<ul>
+<li>ISO 639* family: Greek dialects not recognized</li>
+<li>Unicode:
+<ul>
+<li>language and script conflated</li>
+<li>epichoric scripts not recognized</li>
+<li>confusion of multivalent and contradictory glyphs</li>
+</ul></li>
+</ul>
+</section>
+<section class="slide level1">
+
+<blockquote>
+<p>In 2017, it is (still!) not possible to encode Greek</p>
+</blockquote>
+</section>
+<section class="slide level1">
+
+<figure>
+<img src="imgs/secession.png" alt="A Vienna secession?" /><figcaption>A Vienna secession?</figcaption>
+</figure>
+</section>
+<section id="secession-1" class="slide level1">
+<h1>Secession, 1</h1>
+<p>Encode Greek in a <em>specified orthography</em>, including :</p>
+<ul>
+<li>encoding in (primarily) ASCII characters with distinct character for accent, breathing</li>
+<li>encoding in (primarily) Greek Unicode suitable for display</li>
+</ul>
+</section>
+<section id="encoding-greek" class="slide level1">
+<h1>Encoding Greek</h1>
+<p>Literary Greek:</p>
+<blockquote>
+<p>ἔδοξε == e)/doce</p>
+</blockquote>
+<p>Pure diplomatic rendering of classical Attic:</p>
+<blockquote>
+<p>εδοχσεν == EDOXSEN</p>
+</blockquote>
+</section>
+<section id="secession-2" class="slide level1">
+<h1>Secession, 2</h1>
+<p>For historical languages, every analysis is corpus-specific</p>
+</section>
+<section id="a-corpus-linguistic-perspective" class="slide level1">
+<h1>A corpus-linguistic perspective</h1>
+<p>Every corpus is characterized by:</p>
+<ul>
+<li>a unique lexicon in a specified orthography</li>
+<li>a unique set of inflectional rules in a specified orthography</li>
+</ul>
+</section>
+<section id="so-not-a-parser-but..." class="slide level1">
+<h1>So not <em>a parser</em>, but...</h1>
+<blockquote>
+<p>a system for building corpus-specific parsers</p>
+</blockquote>
+</section>
+<section id="citable-results" class="slide level1">
+<h1>Citable results</h1>
+<ul>
+<li>each lexicon entry has a unique ID for <em>lexical entity</em></li>
+<li>each inflectional has a unique ID</li>
+</ul>
+</section>
+<section id="greek-is-defined-by-analytical-categories" class="slide level1">
+<h1>&quot;Greek&quot; is defined by <em>analytical categories</em></h1>
+<ul>
+<li>&quot;noun&quot; (GCN)</li>
+<li>&quot;adjective&quot; (GCND)</li>
+<li>&quot;conjugated verb&quot; (PNTMV)</li>
+<li>&quot;infinitive&quot; (TV)</li>
+<li>&quot;participle&quot; (GCTMV)</li>
+<li>&quot;verbal adjective&quot; (GCN)</li>
+<li>&quot;adverb&quot; (Degree)</li>
+<li>&quot;indeclinable&quot; (part of speech)</li>
+</ul>
+</section>
+<section id="an-analysis-is-composed-of" class="slide level1">
+<h1>An analysis is composed of</h1>
+<ul>
+<li>a string of characters analyzed</li>
+<li>a form</li>
+<li>a uniquely identified lexical entity</li>
+<li>a uniquely identified inflectional rule</li>
+</ul>
+</section>
+<section id="kanónes" class="slide level1">
+<h1>Kanónes</h1>
+<p>A system for building parsers from tables defining:</p>
+<ol type="1">
+<li>inflectional rules</li>
+<li>a lexicon of &quot;stems&quot;</li>
+</ol>
+</section>
+<section id="parsing-morphology" class="slide level1">
+<h1>Parsing morphology</h1>
+<ul>
+<li>standard technology: <strong>finite state transducers</strong> (FST)</li>
+<li>require context-free state transitions</li>
+</ul>
+</section>
+<section id="parsing-greek" class="slide level1">
+<h1>Parsing Greek</h1>
+<p>FSTs fail!</p>
+<blockquote>
+<p>Crossing of lexical and inflectional properties of accent cannot be reduced to context-free state transitions</p>
+</blockquote>
+</section>
+<section id="solution-in-kanónes" class="slide level1">
+<h1>Solution in Kanónes</h1>
+<p>&quot;Analysis by synthesis&quot; algorithm:</p>
+<ol type="1">
+<li>collect an accented word</li>
+<li>strip its accents, and use FST to get <em>possible</em> analyses</li>
+<li>algorithmically apply correct accent</li>
+<li>compare accented candidate forms to original word</li>
+</ol>
+</section>
+<section id="example-parse" class="slide level1">
+<h1>Example parse</h1>
+<ol type="1">
+<li>original word: <strong>εἶπε</strong></li>
+<li>εἰπε analyzed as:
+<ul>
+<li>3rd singular aorist indicative active</li>
+<li>2nd singular aorist imperative active</li>
+</ul></li>
+<li>accenting yields:
+<ul>
+<li>εἶπε for 3rd singular aorist indicative active</li>
+<li>εἰπέ for 2nd singular aorist imperative active</li>
+</ul></li>
+<li>so solution is <strong>3rd singular aorist indicative active</strong></li>
+</ol>
+</section>
+<section id="a-simple-worked-example-two-parallel-corpora" class="slide level1">
+<h1>A simple worked example: two parallel corpora</h1>
+</section>
+<section class="slide level1">
+
+<p>Andocides <em>On the Mysteries</em> 1.96</p>
+<blockquote>
+<p>Νόμος. ἔδοξε τῇ βουλῇ καὶ τῷ δήμῳ.</p>
+</blockquote>
+</section>
+<section class="slide level1">
+
+<p>IG 1.3, 156</p>
+<figure>
+<img src="imgs/decree-masked.png" alt="Decree honoring Leonides of Halicarnassus" /><figcaption>Decree honoring Leonides of Halicarnassus</figcaption>
+</figure>
+</section>
+<section id="vocabulary-stems" class="slide level1">
+<h1>Vocabulary (&quot;stems&quot;)</h1>
+<figure>
+<img src="imgs/attic-noun-stems.png" alt="Nouns, in Attic" /><figcaption>Nouns, in Attic</figcaption>
+</figure>
+<figure>
+<img src="imgs/lit-noun-stems.png" alt="Nouns, in literary Greek" /><figcaption>Nouns, in literary Greek</figcaption>
+</figure>
+</section>
+<section id="inflectional-rules" class="slide level1">
+<h1>Inflectional rules</h1>
+<figure>
+<img src="imgs/attic-noun-infl.png" alt="Nouns, in Attic" /><figcaption>Nouns, in Attic</figcaption>
+</figure>
+<figure>
+<img src="imgs/lit-noun-infl.png" alt="Nouns, in literary Greek" /><figcaption>Nouns, in literary Greek</figcaption>
+</figure>
+</section>
+<section id="analysis" class="slide level1">
+<h1>Analysis</h1>
+<figure>
+<img src="imgs/analysis-lit.png" alt="literary Greek" /><figcaption>literary Greek</figcaption>
+</figure>
+</section>
+<section id="analysis-1" class="slide level1">
+<h1>Analysis</h1>
+<figure>
+<img src="imgs/analysis-attic.png" alt="Attic Greek" /><figcaption>Attic Greek</figcaption>
+</figure>
+</section>
+<section id="generated" class="slide level1">
+<h1>Generated</h1>
+<figure>
+<img src="imgs/generator.png" alt="literary Greek" /><figcaption>literary Greek</figcaption>
+</figure>
+</section>
+<section id="pipeline" class="slide level1">
+<h1>Pipeline</h1>
+<p>Output of Attic analysis fed as input to literary generator:</p>
+<figure>
+<img src="imgs/pipeline.png" alt="From Attic to literary Greek" /><figcaption>From Attic to literary Greek</figcaption>
+</figure>
+</section>
+<section id="current-state" class="slide level1">
+<h1>Current state</h1>
+<ul>
+<li>largely completed in 2016 using Stuttgart FST toolkit + Java/Groovy custom classes</li>
+<li>summer 2017: porting custom classes to Scala substantially complete</li>
+<li>initial test corpora from HMT project:
+<ul>
+<li>complete <em>Iliad</em> manuscripts</li>
+<li>more than 10,000 scholia</li>
+</ul></li>
+</ul>
+</section>
+<section id="possibilities" class="slide level1">
+<h1>Possibilities</h1>
+<ul>
+<li>morphologically sensitive structured searching</li>
+<li>lexically unified corpus for latent pattern analysis</li>
+<li>integration of corpora in distinct writing systems or dialects</li>
+</ul>
+</section>
+<section id="thank-you" class="slide level1">
+<h1>Thank you!</h1>
+<p>For more information:</p>
+<ul>
+<li>&quot;Morphological Analysis of Historical Languages,&quot; <em>BICS</em> 59-2 (2016) 89-102.</li>
+<li><a href="https://github.com/neelsmith/kanones" class="uri">https://github.com/neelsmith/kanones</a></li>
+</ul>
+</section>
+    </div>
+  </div>
+
+  <script src="reveal.js/lib/js/head.min.js"></script>
+  <script src="reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: 'reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>
