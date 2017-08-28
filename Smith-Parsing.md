@@ -97,7 +97,7 @@ Pure diplomatic rendering of classical Attic:
 
 Editorially normalized version of classical Attic:
 
->ἔδοχσεν τêι βολêι == E(/DOXSEN TE=I BOLE=I
+>ἔδοχσεν τêι βολêι == E)/DOXSEN TE=I BOLE=I
 
 ---
 
