@@ -2,7 +2,7 @@
 
 Talk at ICGLE (Vienna, 2017) on "Parsing Greek morphology."
 
-Source in markdown format:
+Source in markdown format ([Smith-Parsing.md](Smith-Parsing.md)):
 
 -   assumes availability of Gentium font
 -   builds with pandoc as detailed in these gists:
