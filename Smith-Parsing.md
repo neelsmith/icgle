@@ -8,6 +8,9 @@ header-includes:
 
 # ... in multiple dialects and alphabets
 
+-   local dialects
+-   epichoric scripts
+
 ---
 
 
@@ -57,6 +60,14 @@ Homer Multitext project: manuscripts with
     -   language and script conflated
     -   epichoric scripts not recognized
     -   confusion of multivalent and contradictory glyphs
+
+---
+
+
+
+![Peter Bruegel the Elder, 1563, KHM GG 1026](imgs/babel.png)
+
+
 
 ---
 
