@@ -34,6 +34,7 @@ header-includes:
 
 # Some reasons, good and bad
 
+-   disciplinary culture?
 -   corpus size vs. tolerance for imprecise editions
 -   **morphological complexity**
 
@@ -85,9 +86,16 @@ Homer Multitext project: manuscripts with
 ---
 
 
-# Secession, 1
+# Secession, 1: orthography
 
-Encode Greek in a *specified orthography*, including :
+>**not** "the" Greek alphabet, but multiple systems
+> for writing Greek
+
+---
+
+
+# Specifying an orthography
+
 
 -   encoding in (primarily) ASCII characters with distinct character for accent, breathing
 -   encoding in (primarily) Greek Unicode suitable for display
@@ -112,18 +120,20 @@ Editorially normalized version of classical Attic:
 
 ---
 
-# Secession, 2
+# Secession, 2: language
 
-For historical languages, every analysis is corpus-specific
+>**not** "Greek," but the Greek of a specific corpus
+>
+
 
 ---
 
 # A corpus-linguistic perspective
 
-Every corpus is characterized by:
-
--    a unique lexicon in a specified orthography
--    a unique set of inflectional rules in a specified orthography
+-   For historical languages, every analysis is corpus-specific
+-   Every corpus is characterized by:
+    -    a unique **lexicon** in a specified orthography
+    -    a unique set of **inflectional** rules in a specified orthography
 
 ---
 
@@ -140,12 +150,22 @@ Every corpus is characterized by:
 # Citable results
 
 -   each lexicon entry has a unique ID for *lexical entity*
--   each inflectional has a unique ID
+-   each *inflectional rule* has a unique ID
 
 
 ---
 
-# "Greek" is defined by *analytical categories*
+# An analysis is composed of
+
+1.   a string of characters analyzed
+2.   a specified form
+3.   a uniquely identified lexical entity
+4.   a uniquely identified inflectional rule
+
+
+---
+
+# "Greek" is defined by *values specifying form*
 
 
 - "noun" (GCN)
@@ -154,29 +174,25 @@ Every corpus is characterized by:
 - "infinitive" (TV)
 - "participle" (GCTMV)
 - "verbal adjective" (GCN)
-- "adverb" (Degree)
+- "adverb" (degree)
 - "indeclinable" (part of speech)
 
 
 
----
-
-# An analysis is composed of
-
--   a string of characters analyzed
--   a form
--   a uniquely identified lexical entity
--   a uniquely identified inflectional rule
 
 
 ---
 
 # Kanónes
 
-A system for building parsers from tables defining:
+(*not* Theodosius of Alexandria!)
+
+A system for building parsers from tables by defining:
 
 1.  inflectional rules
 2.  a lexicon of "stems"
+
+
 
 ---
 
@@ -192,7 +208,9 @@ A system for building parsers from tables defining:
 
 FSTs fail!
 
->Crossing of lexical and inflectional properties of accent cannot be reduced to context-free state transitions
+>Accent crosses lexical and inflectional properties
+>
+>->  cannot be reduced to context-free state transitions
 
 ---
 
@@ -286,7 +304,7 @@ IG 1.3, 156
 
 # Pipeline
 
-Output of Attic analysis fed as input to literary generator:
+Output of Attic analysis -> literary Greek generator
 
 
 ![From Attic to literary Greek](imgs/pipeline.png)

@@ -58,6 +58,7 @@
 <section id="some-reasons-good-and-bad" class="slide level1">
 <h1>Some reasons, good and bad</h1>
 <ul>
+<li>disciplinary culture?</li>
 <li>corpus size vs. tolerance for imprecise editions</li>
 <li><strong>morphological complexity</strong></li>
 </ul>
@@ -104,9 +105,14 @@
 <img src="imgs/secession.png" alt="A Vienna secession?" /><figcaption>A Vienna secession?</figcaption>
 </figure>
 </section>
-<section id="secession-1" class="slide level1">
-<h1>Secession, 1</h1>
-<p>Encode Greek in a <em>specified orthography</em>, including :</p>
+<section id="secession-1-orthography" class="slide level1">
+<h1>Secession, 1: orthography</h1>
+<blockquote>
+<p><strong>not</strong> &quot;the&quot; Greek alphabet, but multiple systems for writing Greek</p>
+</blockquote>
+</section>
+<section id="specifying-an-orthography" class="slide level1">
+<h1>Specifying an orthography</h1>
 <ul>
 <li>encoding in (primarily) ASCII characters with distinct character for accent, breathing</li>
 <li>encoding in (primarily) Greek Unicode suitable for display</li>
@@ -127,16 +133,21 @@
 <p>ἔδοχσεν τêι βολêι == E)/DOXSEN TE=I BOLE=I</p>
 </blockquote>
 </section>
-<section id="secession-2" class="slide level1">
-<h1>Secession, 2</h1>
-<p>For historical languages, every analysis is corpus-specific</p>
+<section id="secession-2-language" class="slide level1">
+<h1>Secession, 2: language</h1>
+<blockquote>
+<p><strong>not</strong> &quot;Greek,&quot; but the Greek of a specific corpus</p>
+</blockquote>
 </section>
 <section id="a-corpus-linguistic-perspective" class="slide level1">
 <h1>A corpus-linguistic perspective</h1>
-<p>Every corpus is characterized by:</p>
 <ul>
-<li>a unique lexicon in a specified orthography</li>
-<li>a unique set of inflectional rules in a specified orthography</li>
+<li>For historical languages, every analysis is corpus-specific</li>
+<li>Every corpus is characterized by:
+<ul>
+<li>a unique <strong>lexicon</strong> in a specified orthography</li>
+<li>a unique set of <strong>inflectional</strong> rules in a specified orthography</li>
+</ul></li>
 </ul>
 </section>
 <section id="so-not-a-parser-but..." class="slide level1">
@@ -149,11 +160,20 @@
 <h1>Citable results</h1>
 <ul>
 <li>each lexicon entry has a unique ID for <em>lexical entity</em></li>
-<li>each inflectional has a unique ID</li>
+<li>each <em>inflectional rule</em> has a unique ID</li>
 </ul>
 </section>
-<section id="greek-is-defined-by-analytical-categories" class="slide level1">
-<h1>&quot;Greek&quot; is defined by <em>analytical categories</em></h1>
+<section id="an-analysis-is-composed-of" class="slide level1">
+<h1>An analysis is composed of</h1>
+<ol type="1">
+<li>a string of characters analyzed</li>
+<li>a specified form</li>
+<li>a uniquely identified lexical entity</li>
+<li>a uniquely identified inflectional rule</li>
+</ol>
+</section>
+<section id="greek-is-defined-by-values-specifying-form" class="slide level1">
+<h1>&quot;Greek&quot; is defined by <em>values specifying form</em></h1>
 <ul>
 <li>&quot;noun&quot; (GCN)</li>
 <li>&quot;adjective&quot; (GCND)</li>
@@ -161,22 +181,14 @@
 <li>&quot;infinitive&quot; (TV)</li>
 <li>&quot;participle&quot; (GCTMV)</li>
 <li>&quot;verbal adjective&quot; (GCN)</li>
-<li>&quot;adverb&quot; (Degree)</li>
+<li>&quot;adverb&quot; (degree)</li>
 <li>&quot;indeclinable&quot; (part of speech)</li>
-</ul>
-</section>
-<section id="an-analysis-is-composed-of" class="slide level1">
-<h1>An analysis is composed of</h1>
-<ul>
-<li>a string of characters analyzed</li>
-<li>a form</li>
-<li>a uniquely identified lexical entity</li>
-<li>a uniquely identified inflectional rule</li>
 </ul>
 </section>
 <section id="kanónes" class="slide level1">
 <h1>Kanónes</h1>
-<p>A system for building parsers from tables defining:</p>
+<p>(<em>not</em> Theodosius of Alexandria!)</p>
+<p>A system for building parsers from tables by defining:</p>
 <ol type="1">
 <li>inflectional rules</li>
 <li>a lexicon of &quot;stems&quot;</li>
@@ -193,7 +205,8 @@
 <h1>Parsing Greek</h1>
 <p>FSTs fail!</p>
 <blockquote>
-<p>Crossing of lexical and inflectional properties of accent cannot be reduced to context-free state transitions</p>
+<p>Accent crosses lexical and inflectional properties</p>
+<p>-&gt; cannot be reduced to context-free state transitions</p>
 </blockquote>
 </section>
 <section id="solution-in-kanónes" class="slide level1">
@@ -278,7 +291,7 @@
 </section>
 <section id="pipeline" class="slide level1">
 <h1>Pipeline</h1>
-<p>Output of Attic analysis fed as input to literary generator:</p>
+<p>Output of Attic analysis -&gt; literary Greek generator</p>
 <figure>
 <img src="imgs/pipeline.png" alt="From Attic to literary Greek" /><figcaption>From Attic to literary Greek</figcaption>
 </figure>
